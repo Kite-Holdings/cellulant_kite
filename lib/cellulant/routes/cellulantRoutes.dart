@@ -10,7 +10,11 @@ Router cellulantRoutes(Router router){
   router
     .route('$baseUrl/validation')
     .link(()=> CellulantValidationController()); 
-   
+
+  router
+    .route('$baseUrl/payment')
+    .link(()=> CellulantPaymentController()); 
+  
 
   return router;
 }

@@ -15,7 +15,7 @@ class CellulantQueryBillModule{
       "payload": "{\"credentials\":{\"username\":\"$cellulantUsername\",\"password\":\"$cellulantPassword\"},\"packet\": [{\"serviceID\":$serviceID,\"accountNumber\":\"$accountNumber\",\"requestExtraData\":\"\"}]}"
     };
     try {
-      final http.Response _res = await http.post(cellulantValidationUrl, body: json.encode(_payload));
+      final http.Response _res = await http.post(cellulantQueryBillUrl, body: json.encode(_payload));
       final dynamic _body = json.decode(_res.body);
       if(_res.statusCode == 200){
         if(_body['authStatus']['authStatusCode'] == 131){
