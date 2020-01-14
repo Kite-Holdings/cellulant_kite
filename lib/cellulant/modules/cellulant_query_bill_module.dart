@@ -20,7 +20,7 @@ class CellulantQueryBillModule{
       if(_res.statusCode == 200){
         if(_body['authStatus']['authStatusCode'] == 131){
           
-          if(_body['results'][0]['statusCode'] == 307){
+          if(_body['results'][0]['statusCode'] == 308){
             response['status'] = 0;
             response['body'] = _body['results'][0];
           } else {
