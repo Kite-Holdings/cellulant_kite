@@ -1,3 +1,5 @@
+import 'package:cellulant/cellulant/cellulant_routes/cellulantRoutes.dart';
+
 import 'cellulant.dart';
 
 /// This type initializes an application.
@@ -33,6 +35,8 @@ class CellulantChannel extends ApplicationChannel {
       .linkFunction((request) async {
         return Response.ok({"key": "value"});
       });
+
+    cellulantRoutes(router);
 
     return router;
   }
