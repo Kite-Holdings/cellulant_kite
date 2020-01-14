@@ -1,4 +1,4 @@
-import 'package:cellulant/cellulant/cellulant_routes/cellulantRoutes.dart';
+import 'package:cellulant/cellulant/routes/cellulantRoutes.dart';
 
 import 'cellulant.dart';
 

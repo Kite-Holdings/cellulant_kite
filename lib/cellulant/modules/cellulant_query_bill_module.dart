@@ -1,17 +1,17 @@
 import 'dart:convert';
 
-import 'package:cellulant/cellulant/cellulant_configs/cellulant_configs.dart';
+import 'package:cellulant/cellulant/configs/cellulant_configs.dart';
 import 'package:http/http.dart' as http;
 
-class CellulantValidationModule{
-  CellulantValidationModule({this.accountNumber, this.serviceID});
+class CellulantQueryBillModule{
+  CellulantQueryBillModule({this.accountNumber, this.serviceID});
 
   final String accountNumber;
   final int serviceID;
-  Future<Map<String, dynamic>> validate()async{
+  Future<Map<String, dynamic>> query()async{
     final Map<String, dynamic> response = {};
     final Map<String, dynamic> _payload = {
-      "function": "BEEP.validateAccount",
+      "function": "BEEP.queryBill",
       "payload": "{\"credentials\":{\"username\":\"$cellulantUsername\",\"password\":\"$cellulantPassword\"},\"packet\": [{\"serviceID\":$serviceID,\"accountNumber\":\"$accountNumber\",\"requestExtraData\":\"\"}]}"
     };
     try {

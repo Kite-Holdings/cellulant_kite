@@ -1,6 +1,6 @@
 import 'package:cellulant/cellulant.dart';
-import 'package:cellulant/cellulant/cellulant_modules/cellulant_modules.dart' show CellulantValidationModule;
-import 'package:cellulant/cellulant/cellulant_serializers/cellulant_serializers.dart' show CellulantValidationSerializer;
+import 'package:cellulant/cellulant/modules/cellulant_modules.dart' show CellulantValidationModule;
+import 'package:cellulant/cellulant/serializers/cellulant_serializers.dart' show CellulantValidationSerializer;
 
 class CellulantValidationController extends ResourceController{
   @Operation.post()
