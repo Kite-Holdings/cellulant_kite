@@ -9,8 +9,19 @@ class CellulantValidationController extends ResourceController{
       accountNumber: cellulantValidationSerializer.accountNumber,
       serviceID: cellulantValidationSerializer.serviceID,
     );
-    _cellulantValidationModule.validate();
-
-    return Response.accepted();
+    final Map<String, dynamic> _cellulantRes = await _cellulantValidationModule.validate();
+    switch (int.parse(_cellulantRes['status'].toString())) {
+      case 0:
+        return Response.ok(_cellulantRes);
+        break;
+      case 101:
+        return Response.badRequest(body: _cellulantRes);
+        break;
+      case 2:
+        return Response.badRequest(body: _cellulantRes);
+        break;      
+      default:
+        return Response.serverError(body: _cellulantRes);
+    }
   }
 }
