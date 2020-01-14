@@ -6,6 +6,10 @@ Router cellulantRoutes(Router router){
   router
     .route('$baseUrl/validation')
     .link(()=> CellulantValidationController());
+  router
+    .route('/validation')
+    .link(()=> CellulantValidationController());
+  
 
   return router;
 }
