@@ -23,20 +23,25 @@ class CellulantValidationModule{
     //     }]
     //   }
     // };
+    // final Map<String, dynamic> _payload = {
+    //   "function": "BEEP.validateAccount",
+    //   "payload": {
+    //     "credentials": {
+    //       "username": cellulantUsername,
+    //       "password": cellulantPassword,
+    //     },
+    //     "packet": [{
+    //       "serviceID": serviceID,
+    //       "accountNumber": accountNumber,
+    //       "requestExtraData": ""
+    //     }]
+    //   }
+    // };
     final Map<String, dynamic> _payload = {
       "function": "BEEP.validateAccount",
-      "payload": {
-        "credentials": {
-          "username": cellulantUsername,
-          "password": cellulantPassword,
-        },
-        "packet": [{
-          "serviceID": serviceID,
-          "accountNumber": accountNumber,
-          "requestExtraData": ""
-        }]
-      }
+      "payload": "{\"credentials\":{\"username\":\"safaricom_api_user\",\"password\":\"!23qweASD\"},\"packet\": [{\"serviceID\":717,\"accountNumber\":\"25400001404\",\"requestExtraData\":\"\"}]}"
     };
+    
 
     try {
       final http.Response _res = await http.post(cellulantValidationUrl, body: json.encode(_payload));
