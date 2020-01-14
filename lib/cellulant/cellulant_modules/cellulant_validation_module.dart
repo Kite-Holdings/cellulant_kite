@@ -42,6 +42,7 @@ class CellulantValidationModule{
       final http.Response _res = await http.post(cellulantValidationUrl, body: json.encode(_payload));
       print(_res.statusCode);
       print(_res.body);
+      print(json.encode(_payload));
     } catch (e) {
       print(e);
     }

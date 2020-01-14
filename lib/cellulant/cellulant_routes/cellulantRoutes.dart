@@ -5,11 +5,7 @@ Router cellulantRoutes(Router router){
   const String baseUrl = '/cellulant';
   router
     .route('$baseUrl/validation')
-    .link(()=> CellulantValidationController());
-  router
-    .route('/validation')
-    .link(()=> CellulantValidationController());
-  
+    .link(()=> CellulantValidationController());  
 
   return router;
 }
